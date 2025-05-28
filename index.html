@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de Ansiedade e Esquiva Experiencial</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .question-group {
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .question-item {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .options label {
+            display: inline-block;
+            margin-right: 10px;
+            font-weight: normal;
+        }
+        input[type="text"], input[type="date"] {
+            width: 95%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        select {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        .scale-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .likert-options span, .frequency-options span {
+            display: inline-block;
+            text-align: center;
+            margin: 0 5px;
+            min-width: 30px;
+        }
+        .likert-options input, .frequency-options input {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Avaliação de Ansiedade e Esquiva Experiencial</h1>
+        <p>Esta aplicação apresenta as escalas utilizadas para avaliar o estado antes e depois da participação no Jogo de Cartas para Enfrentamento da Esquiva Experiencial.</p>
+
+        <form id="evaluation-form">
+            <h2>Informações do Participante</h2>
+            <div class="question-item">
+                <label for="participant-name">Nome do participante:</label>
+                <input type="text" id="participant-name" name="participant_name" required>
+            </div>
+            <div class="question-item">
+                <label for="evaluation-date">Data:</label>
+                <input type="date" id="evaluation-date" name="evaluation_date" required>
+            </div>
+            <div class="question-item">
+                <label for="evaluation-moment">Momento da avaliação:</label>
+                <select id="evaluation-moment" name="evaluation_moment" required>
+                    <option value="">Selecione...</option>
+                    <option value="antes">Antes do jogo</option>
+                    <option value="depois">Depois do jogo</option>
+                    <option value="follow-up">Follow-up</option>
+                </select>
+            </div>
+
+            <hr>
+
+            <h2>Escala Avaliativa</h2>
+            <p><strong>Instruções:</strong> Para cada afirmação abaixo, marque o número que melhor representa como você se sente neste momento.</p>
+            <p class="scale-description">Escala: 1 = Discordo totalmente, 7 = Concordo totalmente</p>
+
+            <div class="question-group">
+                <h3>Dimensão 1: Consciência da Esquiva</h3>
+                <div class="question-item">
+                    <label>a) Consigo identificar quando estou evitando situações por ansiedade.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d1a" value="1" required> <input type="radio" name="d1a" value="2"> <input type="radio" name="d1a" value="3"> <input type="radio" name="d1a" value="4"> <input type="radio" name="d1a" value="5"> <input type="radio" name="d1a" value="6"> <input type="radio" name="d1a" value="7">
+                    </div>
+                </div>
+                <div class="question-item">
+                    <label>b) Reconheço os padrões de esquiva que utilizo no meu dia a dia.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d1b" value="1" required> <input type="radio" name="d1b" value="2"> <input type="radio" name="d1b" value="3"> <input type="radio" name="d1b" value="4"> <input type="radio" name="d1b" value="5"> <input type="radio" name="d1b" value="6"> <input type="radio" name="d1b" value="7">
+                    </div>
+                </div>
+                <div class="question-item">
+                    <label>c) Entendo o impacto negativo que a esquiva tem na minha vida.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d1c" value="1" required> <input type="radio" name="d1c" value="2"> <input type="radio" name="d1c" value="3"> <input type="radio" name="d1c" value="4"> <input type="radio" name="d1c" value="5"> <input type="radio" name="d1c" value="6"> <input type="radio" name="d1c" value="7">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>d) Percebo quando meus comportamentos de esquiva são automáticos.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d1d" value="1" required> <input type="radio" name="d1d" value="2"> <input type="radio" name="d1d" value="3"> <input type="radio" name="d1d" value="4"> <input type="radio" name="d1d" value="5"> <input type="radio" name="d1d" value="6"> <input type="radio" name="d1d" value="7">
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h3>Dimensão 2: Disposição para Enfrentamento</h3>
+                 <div class="question-item">
+                    <label>a) Sinto-me capaz de enfrentar situações que me causam ansiedade moderada.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d2a" value="1" required> <input type="radio" name="d2a" value="2"> <input type="radio" name="d2a" value="3"> <input type="radio" name="d2a" value="4"> <input type="radio" name="d2a" value="5"> <input type="radio" name="d2a" value="6"> <input type="radio" name="d2a" value="7">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>b) Estou disposto(a) a experimentar desconforto para alcançar objetivos importantes.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d2b" value="1" required> <input type="radio" name="d2b" value="2"> <input type="radio" name="d2b" value="3"> <input type="radio" name="d2b" value="4"> <input type="radio" name="d2b" value="5"> <input type="radio" name="d2b" value="6"> <input type="radio" name="d2b" value="7">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>c) Tenho estratégias eficazes para lidar com a ansiedade quando ela surge.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d2c" value="1" required> <input type="radio" name="d2c" value="2"> <input type="radio" name="d2c" value="3"> <input type="radio" name="d2c" value="4"> <input type="radio" name="d2c" value="5"> <input type="radio" name="d2c" value="6"> <input type="radio" name="d2c" value="7">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>d) Consigo permanecer em situações desconfortáveis quando são importantes para mim.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d2d" value="1" required> <input type="radio" name="d2d" value="2"> <input type="radio" name="d2d" value="3"> <input type="radio" name="d2d" value="4"> <input type="radio" name="d2d" value="5"> <input type="radio" name="d2d" value="6"> <input type="radio" name="d2d" value="7">
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h3>Dimensão 3: Habilidades Sociais</h3>
+                 <div class="question-item">
+                    <label>a) Sinto-me confiante ao me expressar em situações sociais.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d3a" value="1" required> <input type="radio" name="d3a" value="2"> <input type="radio" name="d3a" value="3"> <input type="radio" name="d3a" value="4"> <input type="radio" name="d3a" value="5"> <input type="radio" name="d3a" value="6"> <input type="radio" name="d3a" value="7">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>b) Consigo manter contato visual durante conversas.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d3b" value="1" required> <input type="radio" name="d3b" value="2"> <input type="radio" name="d3b" value="3"> <input type="radio" name="d3b" value="4"> <input type="radio" name="d3b" value="5"> <input type="radio" name="d3b" value="6"> <input type="radio" name="d3b" value="7">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>c) Sou capaz de expressar meus sentimentos e necessidades a outras pessoas.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d3c" value="1" required> <input type="radio" name="d3c" value="2"> <input type="radio" name="d3c" value="3"> <input type="radio" name="d3c" value="4"> <input type="radio" name="d3c" value="5"> <input type="radio" name="d3c" value="6"> <input type="radio" name="d3c" value="7">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>d) Sinto-me à vontade para pedir ajuda quando necessário.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d3d" value="1" required> <input type="radio" name="d3d" value="2"> <input type="radio" name="d3d" value="3"> <input type="radio" name="d3d" value="4"> <input type="radio" name="d3d" value="5"> <input type="radio" name="d3d" value="6"> <input type="radio" name="d3d" value="7">
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h3>Dimensão 4: Flexibilidade Psicológica</h3>
+                 <div class="question-item">
+                    <label>a) Consigo aceitar pensamentos e sentimentos desconfortáveis sem tentar eliminá-los.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d4a" value="1" required> <input type="radio" name="d4a" value="2"> <input type="radio" name="d4a" value="3"> <input type="radio" name="d4a" value="4"> <input type="radio" name="d4a" value="5"> <input type="radio" name="d4a" value="6"> <input type="radio" name="d4a" value="7">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>b) Sou capaz de agir de acordo com meus valores mesmo quando sinto ansiedade.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d4b" value="1" required> <input type="radio" name="d4b" value="2"> <input type="radio" name="d4b" value="3"> <input type="radio" name="d4b" value="4"> <input type="radio" name="d4b" value="5"> <input type="radio" name="d4b" value="6"> <input type="radio" name="d4b" value="7">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>c) Consigo observar meus pensamentos ansiosos sem me identificar completamente com eles.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d4c" value="1" required> <input type="radio" name="d4c" value="2"> <input type="radio" name="d4c" value="3"> <input type="radio" name="d4c" value="4"> <input type="radio" name="d4c" value="5"> <input type="radio" name="d4c" value="6"> <input type="radio" name="d4c" value="7">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>d) Mantenho-me presente no momento atual mesmo quando surgem preocupações.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d4d" value="1" required> <input type="radio" name="d4d" value="2"> <input type="radio" name="d4d" value="3"> <input type="radio" name="d4d" value="4"> <input type="radio" name="d4d" value="5"> <input type="radio" name="d4d" value="6"> <input type="radio" name="d4d" value="7">
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h3>Dimensão 5: Autoeficácia</h3>
+                 <div class="question-item">
+                    <label>a) Acredito que posso melhorar minha forma de lidar com a ansiedade.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d5a" value="1" required> <input type="radio" name="d5a" value="2"> <input type="radio" name="d5a" value="3"> <input type="radio" name="d5a" value="4"> <input type="radio" name="d5a" value="5"> <input type="radio" name="d5a" value="6"> <input type="radio" name="d5a" value="7">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>b) Sinto-me capaz de implementar mudanças positivas em meu comportamento.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d5b" value="1" required> <input type="radio" name="d5b" value="2"> <input type="radio" name="d5b" value="3"> <input type="radio" name="d5b" value="4"> <input type="radio" name="d5b" value="5"> <input type="radio" name="d5b" value="6"> <input type="radio" name="d5b" value="7">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>c) Confio na minha capacidade de enfrentar desafios futuros.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d5c" value="1" required> <input type="radio" name="d5c" value="2"> <input type="radio" name="d5c" value="3"> <input type="radio" name="d5c" value="4"> <input type="radio" name="d5c" value="5"> <input type="radio" name="d5c" value="6"> <input type="radio" name="d5c" value="7">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>d) Tenho esperança de que posso reduzir o impacto da ansiedade na minha vida.</label>
+                    <div class="options likert-options">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><br>
+                        <input type="radio" name="d5d" value="1" required> <input type="radio" name="d5d" value="2"> <input type="radio" name="d5d" value="3"> <input type="radio" name="d5d" value="4"> <input type="radio" name="d5d" value="5"> <input type="radio" name="d5d" value="6"> <input type="radio" name="d5d" value="7">
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2>Inventário de Habilidades Sociais Adaptado</h2>
+            <p><strong>Instruções:</strong> Leia cada item e estime com que frequência você apresenta o comportamento descrito, considerando um total de 10 situações semelhantes.</p>
+            <p class="scale-description">Escala: 0 = nunca ou raramente (0-2), 1 = com pouca frequência (3-4), 2 = com regular frequência (5-6), 3 = muito frequentemente (7-8), 4 = sempre ou quase sempre (9-10)</p>
+
+            <div class="question-group">
+                <h3>Fator 1: Enfrentamento e Autoafirmação com Risco</h3>
+                <div class="question-item">
+                    <label>a) Quando uma pessoa faz algo que me desagrada, consigo dizer isso a ela de forma assertiva.</label>
+                    <div class="options frequency-options">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><br>
+                        <input type="radio" name="f1a" value="0" required> <input type="radio" name="f1a" value="1"> <input type="radio" name="f1a" value="2"> <input type="radio" name="f1a" value="3"> <input type="radio" name="f1a" value="4">
+                    </div>
+                </div>
+                <div class="question-item">
+                    <label>b) Em uma conversa, se discordo da opinião da maioria, consigo expressar meu ponto de vista.</label>
+                    <div class="options frequency-options">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><br>
+                        <input type="radio" name="f1b" value="0" required> <input type="radio" name="f1b" value="1"> <input type="radio" name="f1b" value="2"> <input type="radio" name="f1b" value="3"> <input type="radio" name="f1b" value="4">
+                    </div>
+                </div>
+                <div class="question-item">
+                    <label>c) Consigo recusar pedidos abusivos ou inadequados, mesmo quando vêm de pessoas próximas.</label>
+                    <div class="options frequency-options">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><br>
+                        <input type="radio" name="f1c" value="0" required> <input type="radio" name="f1c" value="1"> <input type="radio" name="f1c" value="2"> <input type="radio" name="f1c" value="3"> <input type="radio" name="f1c" value="4">
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h3>Fator 2: Autoafirmação na Expressão de Sentimento Positivo</h3>
+                 <div class="question-item">
+                    <label>a) Consigo elogiar outras pessoas quando acho que fizeram algo bem.</label>
+                    <div class="options frequency-options">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><br>
+                        <input type="radio" name="f2a" value="0" required> <input type="radio" name="f2a" value="1"> <input type="radio" name="f2a" value="2"> <input type="radio" name="f2a" value="3"> <input type="radio" name="f2a" value="4">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>b) Demonstro afeto através de palavras ou gestos a pessoas que gosto.</label>
+                    <div class="options frequency-options">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><br>
+                        <input type="radio" name="f2b" value="0" required> <input type="radio" name="f2b" value="1"> <input type="radio" name="f2b" value="2"> <input type="radio" name="f2b" value="3"> <input type="radio" name="f2b" value="4">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>c) Consigo expressar sentimentos positivos em situações de grupo.</label>
+                    <div class="options frequency-options">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><br>
+                        <input type="radio" name="f2c" value="0" required> <input type="radio" name="f2c" value="1"> <input type="radio" name="f2c" value="2"> <input type="radio" name="f2c" value="3"> <input type="radio" name="f2c" value="4">
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h3>Fator 3: Conversação e Desenvoltura Social</h3>
+                 <div class="question-item">
+                    <label>a) Mantenho conversação com pessoas desconhecidas em situações cotidianas (fila, sala de espera, etc.).</label>
+                    <div class="options frequency-options">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><br>
+                        <input type="radio" name="f3a" value="0" required> <input type="radio" name="f3a" value="1"> <input type="radio" name="f3a" value="2"> <input type="radio" name="f3a" value="3"> <input type="radio" name="f3a" value="4">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>b) Consigo encerrar uma conversa de forma educada quando necessário.</label>
+                    <div class="options frequency-options">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><br>
+                        <input type="radio" name="f3b" value="0" required> <input type="radio" name="f3b" value="1"> <input type="radio" name="f3b" value="2"> <input type="radio" name="f3b" value="3"> <input type="radio" name="f3b" value="4">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>c) Participo da conversa, abordando assuntos de interesse comum, quando estou em grupo.</label>
+                    <div class="options frequency-options">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><br>
+                        <input type="radio" name="f3c" value="0" required> <input type="radio" name="f3c" value="1"> <input type="radio" name="f3c" value="2"> <input type="radio" name="f3c" value="3"> <input type="radio" name="f3c" value="4">
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h3>Fator 4: Autoexposição a Desconhecidos e Situações Novas</h3>
+                 <div class="question-item">
+                    <label>a) Apresento-me a pessoas desconhecidas quando necessário.</label>
+                    <div class="options frequency-options">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><br>
+                        <input type="radio" name="f4a" value="0" required> <input type="radio" name="f4a" value="1"> <input type="radio" name="f4a" value="2"> <input type="radio" name="f4a" value="3"> <input type="radio" name="f4a" value="4">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>b) Falo em público (em sala de aula, reuniões, apresentações) quando necessário.</label>
+                    <div class="options frequency-options">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><br>
+                        <input type="radio" name="f4b" value="0" required> <input type="radio" name="f4b" value="1"> <input type="radio" name="f4b" value="2"> <input type="radio" name="f4b" value="3"> <input type="radio" name="f4b" value="4">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>c) Exponho minha opinião mesmo quando sei que pode haver discordância.</label>
+                    <div class="options frequency-options">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><br>
+                        <input type="radio" name="f4c" value="0" required> <input type="radio" name="f4c" value="1"> <input type="radio" name="f4c" value="2"> <input type="radio" name="f4c" value="3"> <input type="radio" name="f4c" value="4">
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h3>Fator 5: Autocontrole da Agressividade</h3>
+                 <div class="question-item">
+                    <label>a) Controlo minha irritação em situações de conflito com colegas ou familiares.</label>
+                    <div class="options frequency-options">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><br>
+                        <input type="radio" name="f5a" value="0" required> <input type="radio" name="f5a" value="1"> <input type="radio" name="f5a" value="2"> <input type="radio" name="f5a" value="3"> <input type="radio" name="f5a" value="4">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>b) Reajo com calma quando sou criticado(a).</label>
+                    <div class="options frequency-options">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><br>
+                        <input type="radio" name="f5b" value="0" required> <input type="radio" name="f5b" value="1"> <input type="radio" name="f5b" value="2"> <input type="radio" name="f5b" value="3"> <input type="radio" name="f5b" value="4">
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <label>c) Consigo lidar com provocações sem responder agressivamente.</label>
+                    <div class="options frequency-options">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><br>
+                        <input type="radio" name="f5c" value="0" required> <input type="radio" name="f5c" value="1"> <input type="radio" name="f5c" value="2"> <input type="radio" name="f5c" value="3"> <input type="radio" name="f5c" value="4">
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Opcional: Adicionar campos para questões abertas se necessário -->
+            <!-- 
+            <h2>Questões Abertas (Opcional)</h2>
+            <div class="question-item">
+                <label for="open-q1">O que você espera aprender com este jogo? (apenas pré-jogo)</label>
+                <textarea id="open-q1" name="open_q1" rows="4"></textarea>
+            </div>
+            <div class="question-item">
+                <label for="open-q2">Quais comportamentos de esquiva você identificou em si mesmo durante o jogo? (apenas pós-jogo)</label>
+                <textarea id="open-q2" name="open_q2" rows="4"></textarea>
+            </div>
+            <div class="question-item">
+                <label for="open-q3">Quais estratégias de enfrentamento você pretende aplicar no seu dia a dia? (apenas pós-jogo)</label>
+                <textarea id="open-q3" name="open_q3" rows="4"></textarea>
+            </div>
+            -->
+
+            <button type="submit">Enviar Respostas (Simulação)</button>
+
+        </form>
+
+        <script>
+            // Opcional: Script para coletar dados do formulário (para facilitar a geração de dados fictícios)
+            document.getElementById('evaluation-form').addEventListener('submit', function(event) {
+                event.preventDefault(); // Previne o envio real do formulário
+                const formData = new FormData(event.target);
+                const data = Object.fromEntries(formData.entries());
+                console.log('Dados do formulário (simulação):', JSON.stringify(data, null, 2));
+                alert('Respostas registradas para simulação. Verifique o console do navegador.');
+                // Em um cenário real, aqui ocorreria o envio para um servidor.
+                // Para esta tarefa, apenas exibimos no console para mostrar a estrutura.
+            });
+        </script>
+
+    </div>
+</body>
+</html>
